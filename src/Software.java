@@ -50,4 +50,23 @@ public class Software extends Product {
                 "OS:                  " + os + "\n";
         return output;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Software)) {
+            return false;
+        }
+        Software software = (Software)other;
+        if (super.equals(software) &&
+            software.programmer.equals(this.programmer) &&
+            software.platform.equals(this.platform) &&
+            software.os.equals(this.os)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

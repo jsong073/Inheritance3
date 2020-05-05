@@ -21,20 +21,6 @@ public class Product {
     }
 
     // Get and set accessors for the code, description, and price instance variables
-
-    @Override
-    public String toString() {
-        return "Code:                " + code + "\n" +
-                "Description:         " + description + "\n" +
-                "Price:               " + this.getFormattedPrice() + "\n";
-    }
-
-    private String getFormattedPrice() {
-        // Use the NumberFormat class to format the price to 2 decimal places
-        Locale locale = new Locale("en", "US");
-        return NumberFormat.getCurrencyInstance(locale).format(price);
-    }
-
     public String getCode() {
         return code;
     }
@@ -63,4 +49,37 @@ public class Product {
     public static int getCount() {
         return count;
     }
+
+    @Override
+    public String toString() {
+        return "Code:                " + code + "\n" +
+                "Description:         " + description + "\n" +
+                "Price:               " + this.getFormattedPrice() + "\n";
+    }
+
+    private String getFormattedPrice() {
+        // Use the NumberFormat class to format the price to 2 decimal places
+        Locale locale = new Locale("en", "US");
+        return NumberFormat.getCurrencyInstance(locale).format(price);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Product)) {
+            return false;
+        }
+        Product product = (Product)other;
+        if (product.code.equals(this.code) &&
+            product.description.equals(this.description) &&
+            product.price == this.price) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }

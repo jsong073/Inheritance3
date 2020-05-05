@@ -39,4 +39,22 @@ public class Book extends Product {
                     "Pages:               " + pages + "\n";
         return output;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if (!(other instanceof Book)) {
+            return false;
+        }
+        Book book = (Book)other;
+        if (super.equals(book) &&
+            book.author.equals(this.author) &&
+            book.pages == this.pages) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
