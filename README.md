@@ -1,1 +1,1 @@
-Inheritance activity #3 on Canvas 
+Inheritance activity #3 and #4 on Canvas 
