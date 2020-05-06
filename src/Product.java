@@ -1,7 +1,7 @@
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Product {
+public abstract class Product {
 
     private String code;
     private String description;
